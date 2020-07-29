@@ -1,0 +1,21 @@
+image: "python:3.7"
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - ./tests/default/build.bash
+  artifacts:
+    paths:
+      - ./tests/default/output/
+      - ./tests/default/debug.log
+
+test:
+  stage: test
+  script:
+    - ./tests/default/output/script/test
