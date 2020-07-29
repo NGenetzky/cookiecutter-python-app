@@ -1,0 +1,12 @@
+## Python requirements for devloping the {{ cookiecutter.app_name }} application.
+##
+##   pyhon -m pip install --requirement=requirements-dev.txt
+##
+
+# from requirements.txt
+python-dotenv>=0.12
+PyYAML>=3.11
+
+# added for requirements-dev.txt
+sphinx
+pytest
