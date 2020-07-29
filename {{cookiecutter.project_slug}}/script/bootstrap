@@ -21,7 +21,7 @@ if [ ! -f "$ENV_DIR/bin/python3" ]; then
 
 	# Find Python executable.
 	for pybin in "${PYTHON:-}" python3 python NOT_FOUND; do
-		command -v "$pybin" 2>&1 >/dev/null && break
+		command -v "$pybin" >/dev/null 2>&1 && break
 	done
 	if [ "$pybin" = 'NOT_FOUND' ]; then
 		die 'Could not find python executable! Please install Python 3.5.'
@@ -34,7 +34,7 @@ if [ ! -f "$ENV_DIR/bin/python3" ]; then
 	"$pybin" -m venv "$ENV_DIR"
 
 	# For the case when PATH is already set, but venv was empty.
-	hash -r 2>&1 >/dev/null
+	hash -r >/dev/null 2>&1
 fi
 
 if ! is_on_path "$ENV_DIR/bin"; then

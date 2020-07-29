@@ -1,3 +1,4 @@
+#!/bin/sh
 # vim: set ts=4:
 
 info() {
@@ -13,7 +14,7 @@ warn() {
 die() {
 	# bold red
 	printf '\033[1;31mERROR:\033[0m %s\n' "$1" >&2
-	exit ${2:-2}
+	exit "${2:-2}"
 }
 
 is_on_path() {
