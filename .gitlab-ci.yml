@@ -17,5 +17,10 @@ build:
 
 test:
   stage: test
+  before_script:
+    # NOTE: This attempts to avoid knowing the 'project_slug' for project
+    - cd ./tests/default/output/*
   script:
-    - ./tests/default/output/script/test
+    - ./script/tests
+  dependencies:
+    - build
