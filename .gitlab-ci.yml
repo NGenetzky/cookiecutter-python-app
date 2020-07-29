@@ -21,6 +21,6 @@ test:
     # NOTE: This attempts to avoid knowing the 'project_slug' for project
     - cd ./tests/default/output/*
   script:
-    - ./script/tests
+    - ./script/test
   dependencies:
     - build
